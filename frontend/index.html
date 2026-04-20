@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CV Object Detection</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Object Detection App</h1>
+        <input type="file" id="imageinput" accept="image/*">
+        <button onclick="uploadimage()">Detect Objects</button>
+        <div>
+            <h3>Image Preview</h3>
+            <img id="preview" width="400"/>
+        </div>
+        <div>
+            <h3>Detections</h3>
+            <ul id="results"></ul>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

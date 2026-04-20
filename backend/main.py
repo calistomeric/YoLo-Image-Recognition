@@ -2,8 +2,23 @@ from fastapi import FastAPI, UploadFile, File
 import shutil
 import os
 from model.inference import detect_objects
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+origins = [
+    "http://localhost:5500",   # Common for VS Code Live Server
+    "http://127.0.0.1:5500",
+    "http://localhost:3000",   # Common for React/Next.js
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"]
+)
 
 upload_dir = "uploads"
 os.makedirs(upload_dir, exist_ok=True)
